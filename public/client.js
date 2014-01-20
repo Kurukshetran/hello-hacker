@@ -1,17 +1,12 @@
 var f = require('flates')
-  , shoe = require('shoe')
   , createEditor = require('javascript-editor')
-  //, iframe = require('iframe')
   , makeEmulator = require('./emulator')
-//  , font = require('./font')
   , Script = require('vm').Script
   , fun = require('./fun')
   , lesson = require('./routes/lesson')
 
 window.addEventListener('DOMContentLoaded', function () {
-  //$('#run').hide()
   var updateEmulator = makeEmulator(document.getElementById('emulator'))
-    //, frame = iframe({ container: document.getElementById('run') })
 
   lesson('#lesson')
 
@@ -28,7 +23,6 @@ window.addEventListener('DOMContentLoaded', function () {
       data.history = JSON.parse(data.history)
     } catch (e) {
       data = { value: '// Hello hacker!'}
-      // console.error(e)
     }
     var cm = window.cm = createEditor(
         { value: data.value
@@ -39,7 +33,6 @@ window.addEventListener('DOMContentLoaded', function () {
     cm.on('valid', function (works) {
       if (works) {
         save({ value: cm.getValue(), history: JSON.stringify(cm.editor.getHistory())})
-        //frame.setHTML({ body: f.script({ type: 'text/javascript' }, cm.getValue()) })
         vm = new Script(cm.getValue() + '\n;start()')
         vm.runInNewContext(fun({ updateEmu: updateEmulator.bind(null), updateHw: updateHw.bind(null)}))
       }

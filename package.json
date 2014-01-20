@@ -1,9 +1,12 @@
 { "name": "hello-hacker"
-, "version": "0.0.2"
+, "version": "0.0.3"
 , "author": "Nick Niemeir <nick.niemeir@gmail.com>"
 , "contributors": [ "Matt Niemeir <matt.niemeir@gmail.com>" ]
 , "bin": "./cli.js"
-, "scripts": { "start": "sudo `which node` cli.js" }
+, "scripts": 
+  { "start": "sudo `which node` cli.js"
+  , "build": "browserify public/client.js -o public/bundle.js"
+  }
 , "dependencies":
   { "ecstatic": "*"
   , "ramrod": "*"
