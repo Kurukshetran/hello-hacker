@@ -1,0 +1,29 @@
+{ "name": "hello-hacker"
+, "version": "0.0.1"
+, "author": "Nick Niemeir <nick.niemeir@gmail.com>"
+, "contributors": [ "Matt Niemeir <matt.niemeir@gmail.com>" ]
+, "bin": "./cli.js"
+, "scripts": { "start": "sudo `which node` cli.js" }
+, "dependencies":
+  { "ecstatic": "*"
+  , "ramrod": "*"
+  , "config-chain": "*"
+  , "optimist": "*"
+  , "flates": "*"
+  , "browserify": "*"
+  , "codemirror": "*"
+  , "gulp": "*"
+  , "shoe": "*"
+  , "javascript-editor": "*"
+  , "iframe": "*"
+  , "level": "*"
+  , "scuttlebutt": "*"
+  , "stream-cb": "*"
+  , "spi": "*"
+  }
+, "engines": { "node": "~0.10" }
+, "repository":
+  { "type": "git"
+  , "url": "git://github.com/nrn/hello-hacker.git"
+  }
+}
