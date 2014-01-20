@@ -22,13 +22,19 @@ function server (opts) {
     , router = ramrod(routes)
     , app = http.createServer(router.dispatch.bind(router))
     , db = level(process.env.HOME + '/.hello-hacker')
-    , pixel = new spi.Spi('/dev/spidev0.0', {}, function (s) {s.open()})
     , animationLoop = setInterval(display, 250)
     , dataSequence = [new Buffer(75)]
     , idx = 0
 
+  try {
+    var pixel = new spi.Spi('/dev/spidev0.0', {}, function (s) {s.open()})
+  } catch (e) {
+    console.log('SPI is not working')
+    console.error(e)
+  }
+
   function display () {
-    pixel.write(dataSequence[idx])
+    if (pixel) pixel.write(dataSequence[idx])
     idx = (idx + 1)%dataSequence.length
   }
 

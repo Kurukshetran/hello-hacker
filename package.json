@@ -11,13 +11,8 @@
   , "optimist": "*"
   , "flates": "*"
   , "browserify": "*"
-  , "codemirror": "*"
-  , "gulp": "*"
-  , "shoe": "*"
   , "javascript-editor": "*"
-  , "iframe": "*"
   , "level": "*"
-  , "scuttlebutt": "*"
   , "stream-cb": "*"
   , "spi": "*"
   }
