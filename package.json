@@ -1,5 +1,5 @@
 { "name": "hello-hacker"
-, "version": "0.0.1"
+, "version": "0.0.2"
 , "author": "Nick Niemeir <nick.niemeir@gmail.com>"
 , "contributors": [ "Matt Niemeir <matt.niemeir@gmail.com>" ]
 , "bin": "./cli.js"
