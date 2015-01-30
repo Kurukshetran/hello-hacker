@@ -40,6 +40,7 @@ window.addEventListener('DOMContentLoaded', function () {
   })
 
   function save (contents) {
+    return localStorage[username] = JSON.stringify(contents)
     var xhr = new XMLHttpRequest()
     xhr.open('POST', '/save/' + username)
     xhr.send(JSON.stringify(contents))
@@ -47,6 +48,7 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   function load (cb) {
+    return cb(localStorage[username])
     var xhr = new XMLHttpRequest()
     xhr.open('GET', '/load/' + username)
     xhr.send()
@@ -56,6 +58,7 @@ window.addEventListener('DOMContentLoaded', function () {
 })
 
 function updateHw (frames) {
+  return
   var xhr = new XMLHttpRequest()
   xhr.open('POST', '/led')
   xhr.send(JSON.stringify(frames))
